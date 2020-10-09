@@ -3,12 +3,12 @@ Project is part of 4th year capstone course ELEC 490/498 - Electrical Engineerin
 # Project Description
 Music genre classification is a task that can be solved using a machine learning model with prelabeled dataset. Using this method new songs will be able to classified based on rules. 
 # Members
-Billy Clarke
-Ross Jackson
-Matthew MacDonald
-Brennan Mosher
+Billy Clarke <br />
+Ross Jackson <br />
+Matthew MacDonald <br />
+Brennan Mosher 
 # Supervisors
-Professor Karen Rudie
+Professor Karen Rudie <br />
 Professor Evelyn Morin 
 # Programming Language
 Python
