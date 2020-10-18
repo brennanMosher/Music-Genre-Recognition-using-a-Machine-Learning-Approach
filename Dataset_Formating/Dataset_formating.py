@@ -1,6 +1,6 @@
 import os
-import Spectogram_Conversion as sc
-import Stereo_Mono_Conversion as sm
+from Dataset_Formating import Spectogram_Conversion as sc
+from Dataset_Formating import Stereo_Mono_Conversion as sm
 
 
 file_dir = r'C:/Users/brenn/Documents/GitHub/Music-Genre-Recognition-using-a-Machine-Learning-Appraoch/Dataset/genres_original/'
