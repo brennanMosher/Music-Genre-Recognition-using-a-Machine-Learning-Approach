@@ -1,5 +1,9 @@
 from pydub import AudioSegment
 
+'''
+Convert two channel audio to mono
+'''
+
 # Convert audio file to 1 channel representation
 def Stereo_Mono_Conversion(audio_path, audio_file):
     output_path = audio_path + 'Mono\mono_' + audio_file

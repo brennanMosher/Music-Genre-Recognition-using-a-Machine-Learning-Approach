@@ -1,9 +1,19 @@
 import os
 from PIL import Image
 
+'''
+Crop spectrogram to remove axis labels and whitespace
+
+DO NOT RUN
+'''
+
+
 file_loc = r'C:\Users\brenn\Documents\GitHub\Music-Genre-Recognition-using-a-Machine-Learning-Appraoch\Dataset' \
            r'\genres_original/'
 folder_name = '/Spectograms/'
+
+# Break so I don't accidentaly run the code again
+quit()
 
 # Each genre folder
 for folder in os.listdir(file_loc):

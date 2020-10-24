@@ -5,6 +5,14 @@ import matplotlib.pyplot as plt
 from scipy.fftpack import fft
 from scipy.io import wavfile as wav
 
+'''
+Tensorflow conversion to spectrograms
+
+Maybe use if we go with Mel spectrograms
+
+'''
+
+
 def print_FFT(song_path):
 
     rate, data = wav.read(song_path)

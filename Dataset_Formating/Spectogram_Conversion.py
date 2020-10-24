@@ -3,6 +3,13 @@ import numpy as np
 from scipy import signal
 from scipy.io import wavfile
 
+'''
+Convert .wav file to spectrogram representation 
+
+Should change to input file type to make more general 
+    - Should accept mp3, mp4, FLAC, ...
+'''
+
 
 def spectrogram_conversion(path, output_path, audio_file, plot=True):
     print(path)
