@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Python Files" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Python Files/CNN" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (Music-Genre-Recognition-using-a-Machine-Learning-Approach)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
