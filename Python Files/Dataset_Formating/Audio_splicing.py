@@ -10,11 +10,11 @@ Splice wav files into multiple segments.
 LENGTH = 3 # Set splice length in seconds
 
 
-def splice(audioPath):
-    try:
-        os.mkdir('splice') # Need to figure out where to put this
-    except OSError:
-        print("Creation of the directory failed")
+def splice(audioPath, outputPath):
+    # try:
+    #     os.mkdir('Spliced Spectrogram training') # Need to figure out where to put this
+    # except OSError:
+    #     print("Creation of the directory failed")
 
     audio = AudioSegment.from_wav(audioPath)
     count = math.ceil(audio.duration_seconds/LENGTH) # Do we want the last part of audio?
@@ -23,7 +23,7 @@ def splice(audioPath):
 
     for i in range(count):
         newAudio = audio[t1:t2]
-        newPath = 'splice/'+Path(audioPath).stem+'_splice'+str(i)+'.wav'
+        newPath = outputPath+Path(audioPath).stem+'_splice'+str(i)+'.wav'
         newAudio.export(newPath, format="wav")
         t1 = t2
         t2 = t2 + LENGTH*1000
