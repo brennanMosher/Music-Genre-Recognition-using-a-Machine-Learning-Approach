@@ -1,0 +1,20 @@
+Filters: Dimensionality of output space (# of filters applied)
+Kernel_size: (height, width) of the 2D convolution window
+	
+Kernel size should be small since what separates spectrograms is small differences
+Based on this link:
+https://www.researchgate.net/post/How-do-we-choose-the-filters-for-the-convolutional-layer-of-a-Convolution-Neural-Network-CNN
+Could either use 3x3 or 5x5 if we want think bigger differences between genres occur
+	 
+The greater the number of filters the higher test accuracy
+As the number increases the complexity increases
+Want to make it as large as possible without being unable to handle the code
+From: The Impact of Filter Size and Number of Filters on Classification Accuracy in CNN (2020)
+
+
+A problem with the output feature maps is that they are sensitive to the location of the features in the input. 
+	One approach to address this sensitivity is to down sample the feature maps.
+	
+	This line does the pooling
+	
+	Can either use 2 or 3. Maybe do some testing later to find which performs better

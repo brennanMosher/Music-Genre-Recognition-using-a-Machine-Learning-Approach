@@ -1,0 +1,28 @@
+import Training
+
+# Training/Testing directory locations
+training_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach/Dataset/Spectrogram Dataset Training/'
+testing_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach/Dataset/Spectrogram Dataset Testing/'
+splice_train_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach\Dataset\Spliced Spectrogram\Training/'
+splice_testing_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach\Dataset\Spliced Spectrogram\Testing/'
+
+# Number of genres
+num_genres = 10
+# Batch size for dataset creation and training
+# High batch_size has high computational complexity
+dataset_size = 7000
+batch_size = 20
+# Height and width of images
+img_height = 370
+img_width = 497
+
+# Size of Conv2D filters
+filter1 = 32
+filter2 = 64
+# Size of Conv2D kernel
+kernel_size = (3, 3)
+
+epochs = 30
+
+Training.training(splice_train_loc, splice_testing_loc, num_genres, dataset_size, batch_size, img_height, img_width,
+				  filter1, filter2, kernel_size, epochs)
