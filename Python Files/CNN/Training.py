@@ -30,7 +30,8 @@ def main():
 	num_genres = 10
 	# Batch size for dataset creation and training
 	# High batch_size has high computational complexity
-	batch_size = 10
+	dataset_size = 699
+	batch_size = 20
 	# Height and width of images
 	img_height = 370
 	img_width = 497
@@ -38,7 +39,7 @@ def main():
 	training_path, testing_path = TH.get_data_path(training_loc, testing_loc)
 
 	# Return dataset objects from tensor creation function
-	training_dataset = Tensor_images.dataset_to_tensors(training_path, 20, batch_size)
+	training_dataset = Tensor_images.dataset_to_tensors(training_path, batch_size, dataset_size)
 	testing_dataset = Tensor_images.dataset_to_tensors(testing_path, 300, 300)
 
 	# TODO Set layers to new values based on research
@@ -56,7 +57,7 @@ def main():
 	Want to make it as large as possible without being unable to handle the code
 	From: The Impact of Filter Size and Number of Filters on Classification Accuracy in CNN (2020)
 	'''
-	model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu', input_shape=(img_height, img_width, 3)))
+	model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(img_height, img_width, 3)))
 	'''
 	A problem with the output feature maps is that they are sensitive to the location of the features in the input. 
 	One approach to address this sensitivity is to down sample the feature maps.
@@ -66,9 +67,9 @@ def main():
 	Can either use 2 or 3. Maybe do some testing later to find which performs better
 	'''
 	model.add(layers.MaxPooling2D((2, 2)))
-	model.add(layers.Conv2D(filters=128, kernel_size=(3, 3), activation='relu'))
+	model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 	model.add(layers.MaxPooling2D((2, 2)))
-	model.add(layers.Conv2D(filters=128, kernel_size=(3, 3), activation='relu'))
+	model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 
 	'''
 	Maybe think about adding more layers to increase accuracy
@@ -77,8 +78,8 @@ def main():
 	model.summary()
 
 	model.add(layers.Flatten())
-	model.add(layers.Dense(units=64, activation='relu'))
-	model.add(layers.Dense(units=10))
+	model.add(layers.Dense(64, activation='relu'))
+	model.add(layers.Dense(10))
 
 	model.summary()
 
