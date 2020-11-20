@@ -24,5 +24,5 @@ kernel_size = (3, 3)
 
 epochs = 30
 
-Training.training(splice_train_loc, splice_testing_loc, num_genres, dataset_size, batch_size, img_height, img_width,
+Training.training(training_loc, testing_loc, num_genres, dataset_size, batch_size, img_height, img_width,
 				  filter1, filter2, kernel_size, epochs)

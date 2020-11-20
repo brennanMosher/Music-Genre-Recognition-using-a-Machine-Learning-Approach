@@ -26,11 +26,11 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	model = models.Sequential()
 	# TODO test with different filter values (64, 128, 128)
 	# TODO test Kernel size with (5,5)
-	model.add(layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(img_height, img_width, 3)))
+	model.add(layers.Conv2D(filters=filter1, kernel_size=kernel_size, activation='relu', input_shape=(img_height, img_width, 3)))
 	model.add(layers.MaxPooling2D((2, 2)))
-	model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
+	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, activation='relu'))
 	model.add(layers.MaxPooling2D((2, 2)))
-	model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
+	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, activation='relu'))
 
 	# TODO Test more layers
 
@@ -47,7 +47,7 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 				  metrics=['accuracy'])
 
 	# TODO: Need to test number of epochs to find when overfitting occurs
-	history = model.fit(training_dataset, epochs=30, validation_data=testing_dataset)
+	history = model.fit(training_dataset, epochs=epochs, validation_data=testing_dataset)
 	# TODO: Need to implement cross validation
 
 	# TODO ensure plotting is working
