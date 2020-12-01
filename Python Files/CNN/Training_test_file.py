@@ -23,6 +23,10 @@ filter2 = 64
 kernel_size = (3, 3)
 
 epochs = 30
+# Percentage of dataset used for validation
+validation_split = 0.3
+# Size of strides
+strides = (2, 2)
 
 Training.training(training_loc, testing_loc, num_genres, dataset_size, batch_size, img_height, img_width,
-				  filter1, filter2, kernel_size, epochs)
+				  filter1, filter2, kernel_size, epochs, validation_split, strides)

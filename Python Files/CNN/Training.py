@@ -3,6 +3,7 @@ from tensorflow.keras import models, layers, datasets
 import matplotlib.pyplot as plt
 import Tensor_images
 import Training_help as TH
+from sklearn.model_selection import train_test_split
 
 '''
 Run basic CNN on the tensor representation of spectrogram data
@@ -10,7 +11,7 @@ tensor shape : (700, 497, 370, 3)
 '''
 
 def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, img_height, img_width, filter1, filter2,
-			 kernel_size, epochs):
+			 kernel_size, epochs, validation_split, strides):
 	# Genre labels to print out testing results in human readable format
 	genre_labels = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
 
@@ -22,15 +23,26 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	training_dataset = Tensor_images.dataset_to_tensors(training_path, batch_size, dataset_size)
 	testing_dataset = Tensor_images.dataset_to_tensors(testing_path, 300, 300)
 
+	print('dataset_size')
+	print(len(training_dataset))
+	#
+	split = int(batch_size*validation_split)
+	# Skip and take are used to split the training dataset into a training and validation set
+	validation_dataset = training_dataset.take(split)
+	training_dataset = training_dataset.skip(split)
+	print(len(training_dataset))
+	print(len(validation_dataset))
 
 	model = models.Sequential()
 	# TODO test with different filter values (64, 128, 128)
 	# TODO test Kernel size with (5,5)
-	model.add(layers.Conv2D(filters=filter1, kernel_size=kernel_size, activation='relu', input_shape=(img_height, img_width, 3)))
+	# TODO test with different activation functions
+	# TODO see if increasing the strides helps with computational complexity
+	model.add(layers.Conv2D(filters=filter1, kernel_size=kernel_size, strides=strides, activation='relu', input_shape=(img_height, img_width, 3)))
 	model.add(layers.MaxPooling2D((2, 2)))
-	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, activation='relu'))
+	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, strides=strides, activation='relu'))
 	model.add(layers.MaxPooling2D((2, 2)))
-	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, activation='relu'))
+	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, strides=strides, activation='relu'))
 
 	# TODO Test more layers
 
@@ -47,7 +59,7 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 				  metrics=['accuracy'])
 
 	# TODO: Need to test number of epochs to find when overfitting occurs
-	history = model.fit(training_dataset, epochs=epochs, validation_data=testing_dataset)
+	history = model.fit(training_dataset, epochs=epochs, validation_data=validation_dataset)
 	# TODO: Need to implement cross validation
 
 	# TODO ensure plotting is working
@@ -60,5 +72,9 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	plt.legend(loc='lower right')
 
 	test_loss, test_acc = model.evaluate(testing_dataset, verbose=2)
+
+	print('testing')
+	print(test_loss)
+	print(test_acc)
 
 	return
