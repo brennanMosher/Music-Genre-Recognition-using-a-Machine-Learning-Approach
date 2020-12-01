@@ -6,6 +6,8 @@ testing_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach/Datas
 splice_train_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach\Dataset\Spliced Spectrogram\Training/'
 splice_testing_loc = r'/Music-Genre-Recognition-using-a-Machine-Learning-Approach\Dataset\Spliced Spectrogram\Testing/'
 
+train = splice_train_loc
+test = splice_testing_loc
 # Number of genres
 num_genres = 10
 # Batch size for dataset creation and training
@@ -28,5 +30,5 @@ validation_split = 0.3
 # Size of strides
 strides = (2, 2)
 
-Training.training(training_loc, testing_loc, num_genres, dataset_size, batch_size, img_height, img_width,
+Training.training(train, test, num_genres, dataset_size, batch_size, img_height, img_width,
 				  filter1, filter2, kernel_size, epochs, validation_split, strides)
