@@ -71,7 +71,7 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	plt.ylim([0.5, 1])
 	plt.legend(loc='lower right')
 
-	test_loss, test_acc = model.evaluate(testing_dataset, verbose=2)
+	test_loss, test_acc = model.evaluate(testing_dataset, verbose=1)
 
 	print('testing')
 	print(test_loss)
