@@ -26,7 +26,7 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	print('dataset_size')
 	print(len(training_dataset))
 
-	split = int(batch_size*validation_split)
+	split = int(len(training_dataset)*validation_split)
 	# Skip and take are used to split the training dataset into a training and validation set
 	validation_dataset = training_dataset.take(split)
 	training_dataset = training_dataset.skip(split)
