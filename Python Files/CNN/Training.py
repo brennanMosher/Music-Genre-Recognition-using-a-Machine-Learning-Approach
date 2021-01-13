@@ -3,6 +3,7 @@ from tensorflow.keras import models, layers, datasets
 import matplotlib.pyplot as plt
 import Tensor_images
 import Training_help as TH
+import sys
 from sklearn.model_selection import train_test_split
 
 '''
@@ -11,12 +12,11 @@ tensor shape : (700, 497, 370, 3)
 '''
 
 def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, img_height, img_width, filter1, filter2,
-			 kernel_size, epochs, validation_split, strides):
+			 kernel_size, epochs, validation_split, strides, txt_name):
 	# Genre labels to print out testing results in human readable format
 	genre_labels = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
 
 	# TODO testing with spliced data
-
 	training_path, testing_path = TH.get_data_path(training_loc, testing_loc)
 
 	# Return dataset objects from tensor creation function
@@ -76,5 +76,9 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	print('testing')
 	print(test_loss)
 	print(test_acc)
+	
+	sys.stdout = open(txt_name, 'w')
+	sys.stdout.close()
 
+	# TODO return all values needed from testing (Or just print them out to a txt file)
 	return
