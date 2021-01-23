@@ -43,13 +43,14 @@ kernel_size_test = [(3, 3), (5, 5)]
 validation_split_test = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4]
 strides_test = [(1, 1), (2, 2), (4, 4)]
 
+'''
 # Batch size testing
 for x in batch_size_test:
 	batch_size = x
 	txt_name = 'batch_size' + str(x) + '.txt'
 	Training.training(train, test, num_genres, dataset_size, batch_size, img_height, img_width,
 				  filter1, filter2, kernel_size, epochs, validation_split, strides, txt_name)
-batch_size = 1
+batch_size = 1'''
 
 # Kernel testing
 for x in kernel_size_test:

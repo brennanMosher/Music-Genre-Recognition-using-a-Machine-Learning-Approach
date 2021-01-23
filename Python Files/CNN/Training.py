@@ -13,6 +13,10 @@ tensor shape : (700, 497, 370, 3)
 
 def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, img_height, img_width, filter1, filter2,
 			 kernel_size, epochs, validation_split, strides, txt_name):
+
+	# Print to txt file
+	sys.stdout = open(txt_name, 'w')
+
 	# Genre labels to print out testing results in human readable format
 	genre_labels = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
 
@@ -77,7 +81,6 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	print(test_loss)
 	print(test_acc)
 	
-	sys.stdout = open(txt_name, 'w')
 	sys.stdout.close()
 
 	# TODO return all values needed from testing (Or just print them out to a txt file)

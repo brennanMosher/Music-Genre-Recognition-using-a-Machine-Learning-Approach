@@ -1,0 +1,120 @@
+<TensorSliceDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<ShuffleDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<MapDataset shapes: ((None, None, 3), ()), types: (tf.float32, tf.int32)>
+<MapDataset shapes: ((370, 497, 3), ()), types: (tf.float32, tf.int32)>
+<BatchDataset shapes: ((None, 370, 497, 3), (None,)), types: (tf.float32, tf.int32)>
+<TensorSliceDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<ShuffleDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<MapDataset shapes: ((None, None, 3), ()), types: (tf.float32, tf.int32)>
+<MapDataset shapes: ((370, 497, 3), ()), types: (tf.float32, tf.int32)>
+<BatchDataset shapes: ((None, 370, 497, 3), (None,)), types: (tf.float32, tf.int32)>
+dataset_size
+4
+3
+1
+Model: "sequential_9"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_27 (Conv2D)           (None, 184, 248, 32)      896
+_________________________________________________________________
+max_pooling2d_18 (MaxPooling (None, 92, 124, 32)       0
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 45, 61, 64)        18496
+_________________________________________________________________
+max_pooling2d_19 (MaxPooling (None, 22, 30, 64)        0
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 10, 14, 64)        36928
+=================================================================
+Total params: 56,320
+Trainable params: 56,320
+Non-trainable params: 0
+_________________________________________________________________
+Model: "sequential_9"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_27 (Conv2D)           (None, 184, 248, 32)      896
+_________________________________________________________________
+max_pooling2d_18 (MaxPooling (None, 92, 124, 32)       0
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 45, 61, 64)        18496
+_________________________________________________________________
+max_pooling2d_19 (MaxPooling (None, 22, 30, 64)        0
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 10, 14, 64)        36928
+_________________________________________________________________
+flatten_9 (Flatten)          (None, 8960)              0
+_________________________________________________________________
+dense_18 (Dense)             (None, 64)                573504
+_________________________________________________________________
+dense_19 (Dense)             (None, 10)                650
+=================================================================
+Total params: 630,474
+Trainable params: 630,474
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/30
+3/3 [==============================] - 1s 268ms/step - loss: 2.3269 - accuracy: 0.1102 - val_loss: 2.2934 - val_accuracy: 0.0850
+Epoch 2/30
+3/3 [==============================] - 1s 300ms/step - loss: 2.2784 - accuracy: 0.1323 - val_loss: 2.2048 - val_accuracy: 0.2500
+Epoch 3/30
+3/3 [==============================] - 1s 305ms/step - loss: 2.2094 - accuracy: 0.2224 - val_loss: 2.1734 - val_accuracy: 0.1900
+Epoch 4/30
+3/3 [==============================] - 1s 304ms/step - loss: 2.0952 - accuracy: 0.2625 - val_loss: 2.0059 - val_accuracy: 0.2850
+Epoch 5/30
+3/3 [==============================] - 1s 300ms/step - loss: 2.0381 - accuracy: 0.2826 - val_loss: 2.0930 - val_accuracy: 0.2800
+Epoch 6/30
+3/3 [==============================] - 1s 298ms/step - loss: 2.0565 - accuracy: 0.2645 - val_loss: 1.9219 - val_accuracy: 0.2750
+Epoch 7/30
+3/3 [==============================] - 1s 300ms/step - loss: 1.9755 - accuracy: 0.2565 - val_loss: 1.9062 - val_accuracy: 0.3350
+Epoch 8/30
+3/3 [==============================] - 1s 303ms/step - loss: 1.9025 - accuracy: 0.3206 - val_loss: 1.8375 - val_accuracy: 0.3500
+Epoch 9/30
+3/3 [==============================] - 1s 304ms/step - loss: 1.8460 - accuracy: 0.3367 - val_loss: 1.7647 - val_accuracy: 0.4050
+Epoch 10/30
+3/3 [==============================] - 1s 304ms/step - loss: 1.8566 - accuracy: 0.3146 - val_loss: 1.7377 - val_accuracy: 0.4100
+Epoch 11/30
+3/3 [==============================] - 1s 302ms/step - loss: 1.7637 - accuracy: 0.3367 - val_loss: 1.7022 - val_accuracy: 0.3700
+Epoch 12/30
+3/3 [==============================] - 1s 297ms/step - loss: 1.7217 - accuracy: 0.3768 - val_loss: 1.7146 - val_accuracy: 0.3550
+Epoch 13/30
+3/3 [==============================] - 1s 313ms/step - loss: 1.6632 - accuracy: 0.3948 - val_loss: 1.6061 - val_accuracy: 0.4400
+Epoch 14/30
+3/3 [==============================] - 1s 318ms/step - loss: 1.6338 - accuracy: 0.4309 - val_loss: 1.6261 - val_accuracy: 0.4300
+Epoch 15/30
+3/3 [==============================] - 1s 298ms/step - loss: 1.7199 - accuracy: 0.3988 - val_loss: 1.6032 - val_accuracy: 0.3800
+Epoch 16/30
+3/3 [==============================] - 1s 300ms/step - loss: 1.6089 - accuracy: 0.3908 - val_loss: 1.5702 - val_accuracy: 0.4350
+Epoch 17/30
+3/3 [==============================] - 1s 308ms/step - loss: 1.5941 - accuracy: 0.4148 - val_loss: 1.6282 - val_accuracy: 0.3950
+Epoch 18/30
+3/3 [==============================] - 1s 301ms/step - loss: 1.5659 - accuracy: 0.4188 - val_loss: 1.5863 - val_accuracy: 0.4000
+Epoch 19/30
+3/3 [==============================] - 1s 298ms/step - loss: 1.5829 - accuracy: 0.4529 - val_loss: 1.5106 - val_accuracy: 0.4400
+Epoch 20/30
+3/3 [==============================] - 1s 304ms/step - loss: 1.5335 - accuracy: 0.4329 - val_loss: 1.4801 - val_accuracy: 0.4550
+Epoch 21/30
+3/3 [==============================] - 1s 295ms/step - loss: 1.5434 - accuracy: 0.4429 - val_loss: 1.4173 - val_accuracy: 0.5150
+Epoch 22/30
+3/3 [==============================] - 1s 302ms/step - loss: 1.5178 - accuracy: 0.4369 - val_loss: 1.4772 - val_accuracy: 0.4550
+Epoch 23/30
+3/3 [==============================] - 1s 295ms/step - loss: 1.4379 - accuracy: 0.4549 - val_loss: 1.4084 - val_accuracy: 0.4800
+Epoch 24/30
+3/3 [==============================] - 1s 295ms/step - loss: 1.4509 - accuracy: 0.4790 - val_loss: 1.3489 - val_accuracy: 0.5450
+Epoch 25/30
+3/3 [==============================] - 1s 304ms/step - loss: 1.3796 - accuracy: 0.5070 - val_loss: 1.4034 - val_accuracy: 0.5100
+Epoch 26/30
+3/3 [==============================] - 1s 302ms/step - loss: 1.3442 - accuracy: 0.5351 - val_loss: 1.2998 - val_accuracy: 0.5400
+Epoch 27/30
+3/3 [==============================] - 1s 300ms/step - loss: 1.3772 - accuracy: 0.5190 - val_loss: 1.3262 - val_accuracy: 0.5250
+Epoch 28/30
+3/3 [==============================] - 1s 297ms/step - loss: 1.3442 - accuracy: 0.5371 - val_loss: 1.3433 - val_accuracy: 0.4800
+Epoch 29/30
+3/3 [==============================] - 1s 299ms/step - loss: 1.4008 - accuracy: 0.4990 - val_loss: 1.4060 - val_accuracy: 0.4550
+Epoch 30/30
+3/3 [==============================] - 1s 298ms/step - loss: 1.3661 - accuracy: 0.4729 - val_loss: 1.4111 - val_accuracy: 0.4850
+1/1 [==============================] - 0s 970us/step - loss: 1.9721 - accuracy: 0.3278
+testing
+1.972055435180664
+0.3277592062950134

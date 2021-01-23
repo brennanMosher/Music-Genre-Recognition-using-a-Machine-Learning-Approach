@@ -1,0 +1,162 @@
+C:\Users\matth\AppData\Local\Programs\Python\Python38\python.exe "C:/Users/matth/Desktop/school/490/gitstuff/Music-Genre-Recognition-using-a-Machine-Learning-Approach/Python Files/CNN/Training_test_file.py"
+2021-01-13 21:11:24.374684: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2021-01-13 21:11:28.584276: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library nvcuda.dll
+2021-01-13 21:11:28.699698: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 2060 computeCapability: 7.5
+coreClock: 1.68GHz coreCount: 30 deviceMemorySize: 6.00GiB deviceMemoryBandwidth: 312.97GiB/s
+2021-01-13 21:11:28.699862: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2021-01-13 21:11:29.079005: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2021-01-13 21:11:29.130110: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2021-01-13 21:11:29.156650: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2021-01-13 21:11:29.382760: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusolver64_10.dll
+2021-01-13 21:11:29.569639: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_10.dll
+2021-01-13 21:11:29.818082: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_7.dll
+2021-01-13 21:11:29.818236: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2021-01-13 21:11:29.818730: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-01-13 21:11:29.824657: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1b20db67d50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-01-13 21:11:29.824762: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-01-13 21:11:29.824959: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 2060 computeCapability: 7.5
+coreClock: 1.68GHz coreCount: 30 deviceMemorySize: 6.00GiB deviceMemoryBandwidth: 312.97GiB/s
+2021-01-13 21:11:29.825106: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2021-01-13 21:11:29.825181: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2021-01-13 21:11:29.825256: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2021-01-13 21:11:29.825330: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2021-01-13 21:11:29.825405: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusolver64_10.dll
+2021-01-13 21:11:29.825485: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_10.dll
+2021-01-13 21:11:29.825564: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_7.dll
+2021-01-13 21:11:29.825657: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+<TensorSliceDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<ShuffleDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+2021-01-13 21:11:30.367482: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-13 21:11:30.367571: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0
+2021-01-13 21:11:30.367625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N
+2021-01-13 21:11:30.367822: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4722 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2060, pci bus id: 0000:01:00.0, compute capability: 7.5)
+2021-01-13 21:11:30.370689: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1b2384873c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-01-13 21:11:30.370792: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce RTX 2060, Compute Capability 7.5
+<MapDataset shapes: ((None, None, 3), ()), types: (tf.float32, tf.int32)>
+<MapDataset shapes: ((370, 497, 3), ()), types: (tf.float32, tf.int32)>
+<BatchDataset shapes: ((None, 370, 497, 3), (None,)), types: (tf.float32, tf.int32)>
+<TensorSliceDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<ShuffleDataset shapes: ((), ()), types: (tf.string, tf.int32)>
+<MapDataset shapes: ((None, None, 3), ()), types: (tf.float32, tf.int32)>
+<MapDataset shapes: ((370, 497, 3), ()), types: (tf.float32, tf.int32)>
+<BatchDataset shapes: ((None, 370, 497, 3), (None,)), types: (tf.float32, tf.int32)>
+dataset_size
+699
+490
+209
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 184, 248, 32)      896
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 92, 124, 32)       0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 45, 61, 64)        18496
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 22, 30, 64)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 10, 14, 64)        36928
+=================================================================
+Total params: 56,320
+Trainable params: 56,320
+Non-trainable params: 0
+_________________________________________________________________
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 184, 248, 32)      896
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 92, 124, 32)       0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 45, 61, 64)        18496
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 22, 30, 64)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 10, 14, 64)        36928
+_________________________________________________________________
+flatten (Flatten)            (None, 8960)              0
+_________________________________________________________________
+dense (Dense)                (None, 64)                573504
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                650
+=================================================================
+Total params: 630,474
+Trainable params: 630,474
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/30
+2021-01-13 21:11:31.054219: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2021-01-13 21:11:32.518848: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_7.dll
+2021-01-13 21:11:36.361450: W tensorflow/stream_executor/gpu/redzone_allocator.cc:314] Internal: Invoking GPU asm compilation is supported on Cuda non-Windows platforms only
+Relying on driver to perform ptx compilation.
+Modify $PATH to customize ptxas location.
+This message will be only logged once.
+490/490 [==============================] - 2s 4ms/step - loss: 2.2806 - accuracy: 0.1204 - val_loss: 2.1218 - val_accuracy: 0.2010
+Epoch 2/30
+490/490 [==============================] - 1s 3ms/step - loss: 2.1753 - accuracy: 0.2143 - val_loss: 2.0681 - val_accuracy: 0.2201
+Epoch 3/30
+490/490 [==============================] - 2s 3ms/step - loss: 2.0034 - accuracy: 0.2755 - val_loss: 1.8805 - val_accuracy: 0.2632
+Epoch 4/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.8853 - accuracy: 0.2939 - val_loss: 1.7874 - val_accuracy: 0.3397
+Epoch 5/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.7499 - accuracy: 0.3429 - val_loss: 1.5712 - val_accuracy: 0.4211
+Epoch 6/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.6389 - accuracy: 0.3735 - val_loss: 1.3983 - val_accuracy: 0.5024
+Epoch 7/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.5704 - accuracy: 0.4265 - val_loss: 1.5803 - val_accuracy: 0.3636
+Epoch 8/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.4582 - accuracy: 0.4571 - val_loss: 1.4245 - val_accuracy: 0.4928
+Epoch 9/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.3051 - accuracy: 0.5184 - val_loss: 1.0702 - val_accuracy: 0.6316
+Epoch 10/30
+490/490 [==============================] - 1s 3ms/step - loss: 1.1720 - accuracy: 0.5898 - val_loss: 0.9846 - val_accuracy: 0.6555
+Epoch 11/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.9273 - accuracy: 0.6755 - val_loss: 0.8219 - val_accuracy: 0.7416
+Epoch 12/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.7993 - accuracy: 0.7204 - val_loss: 0.6539 - val_accuracy: 0.7751
+Epoch 13/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.5431 - accuracy: 0.8204 - val_loss: 0.3491 - val_accuracy: 0.8995
+Epoch 14/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.4310 - accuracy: 0.8653 - val_loss: 0.3774 - val_accuracy: 0.8900
+Epoch 15/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.2839 - accuracy: 0.9102 - val_loss: 0.2861 - val_accuracy: 0.9282
+Epoch 16/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.2768 - accuracy: 0.9061 - val_loss: 0.2112 - val_accuracy: 0.9234
+Epoch 17/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.2513 - accuracy: 0.9204 - val_loss: 0.1803 - val_accuracy: 0.9378
+Epoch 18/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.1557 - accuracy: 0.9592 - val_loss: 0.0704 - val_accuracy: 0.9904
+Epoch 19/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.1166 - accuracy: 0.9694 - val_loss: 0.0533 - val_accuracy: 0.9856
+Epoch 20/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0893 - accuracy: 0.9755 - val_loss: 0.0474 - val_accuracy: 0.9856
+Epoch 21/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0615 - accuracy: 0.9857 - val_loss: 0.6873 - val_accuracy: 0.8325
+Epoch 22/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.2395 - accuracy: 0.9449 - val_loss: 0.0792 - val_accuracy: 0.9713
+Epoch 23/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.1146 - accuracy: 0.9714 - val_loss: 0.0406 - val_accuracy: 0.9856
+Epoch 24/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0460 - accuracy: 0.9857 - val_loss: 0.0251 - val_accuracy: 0.9952
+Epoch 25/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.1457 - accuracy: 0.9592 - val_loss: 0.0437 - val_accuracy: 0.9856
+Epoch 26/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0457 - accuracy: 0.9816 - val_loss: 0.0094 - val_accuracy: 1.0000
+Epoch 27/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0875 - accuracy: 0.9633 - val_loss: 0.0288 - val_accuracy: 0.9952
+Epoch 28/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0113 - accuracy: 0.9980 - val_loss: 0.0090 - val_accuracy: 0.9952
+Epoch 29/30
+490/490 [==============================] - 1s 3ms/step - loss: 0.0284 - accuracy: 0.9918 - val_loss: 0.1440 - val_accuracy: 0.9474
+Epoch 30/30
+490/490 [==============================] - 2s 3ms/step - loss: 0.1790 - accuracy: 0.9571 - val_loss: 0.0535 - val_accuracy: 0.9809
+2021-01-13 21:12:31.719487: W tensorflow/core/common_runtime/bfc_allocator.cc:246] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.39GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+1/1 [==============================] - 0s 796us/step - loss: 6.8026 - accuracy: 0.2308
+testing
+6.802605152130127
+0.23076923191547394
