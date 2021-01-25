@@ -34,5 +34,9 @@ validation_split = 0.3
 # Size of strides
 strides = (2, 2)
 
+txt_name = 'train.txt'
+
 Training.training(train, test, num_genres, dataset_size, batch_size, img_height, img_width,
 					  filter1, filter2, kernel_size, epochs, validation_split, strides, txt_name)
+
+# TODO Save model for use later

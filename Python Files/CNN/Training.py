@@ -48,7 +48,6 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	model.add(layers.MaxPooling2D((2, 2)))
 	model.add(layers.Conv2D(filters=filter2, kernel_size=kernel_size, strides=strides, activation='relu'))
 
-	# TODO Test more layers
 
 	model.summary()
 
@@ -66,7 +65,8 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	history = model.fit(training_dataset, epochs=epochs, validation_data=validation_dataset)
 	# TODO: Need to implement cross validation
 
-	# TODO ensure plotting is working
+
+	'''
 	# Plotting not working since matplotlib doesn't have plot function. Not super familiar with matplotlib so maybe I'm doing something wrong
 	plt.plot(history.history['accuracy'], label='accuracy')
 	plt.plot(history.history['val_accuracy'], label='val_accuracy')
@@ -74,6 +74,7 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	plt.ylabel('Accuracy')
 	plt.ylim([0.5, 1])
 	plt.legend(loc='lower right')
+	'''
 
 	test_loss, test_acc = model.evaluate(testing_dataset, verbose=1)
 
