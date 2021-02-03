@@ -84,5 +84,4 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	
 	sys.stdout.close()
 
-	# TODO return all values needed from testing (Or just print them out to a txt file)
 	return
