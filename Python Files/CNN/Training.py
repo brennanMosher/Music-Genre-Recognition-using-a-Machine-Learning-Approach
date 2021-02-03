@@ -76,6 +76,8 @@ def training(training_loc, testing_loc, num_genres, dataset_size, batch_size, im
 	plt.legend(loc='lower right')
 	'''
 
+	model.save('model_v1')  # Save the model
+
 	test_loss, test_acc = model.evaluate(testing_dataset, verbose=1)
 
 	print('testing')
