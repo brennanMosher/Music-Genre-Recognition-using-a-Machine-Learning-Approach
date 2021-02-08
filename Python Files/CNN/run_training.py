@@ -23,7 +23,7 @@ test = testing_loc
 dataset_size = 700
 # Batch size for dataset creation and training
 # High batch_size has high computational complexity
-batch_size = 3
+batch_size = 100
 # Size of Conv2D filters
 filter1 = 32
 filter2 = 64
