@@ -3,6 +3,14 @@ import numpy as np
 from scipy import signal
 from scipy.io import wavfile
 from PIL import Image
+<<<<<<< HEAD
+import os
+from pydub import AudioSegment
+import pydub
+import Stereo_Mono_Conversion
+
+=======
+>>>>>>> parent of 25ae312 (Spectrogram for new dataset (Not working with new data))
 
 '''
 Convert .wav file to spectrogram representation 
@@ -41,4 +49,36 @@ def spectrogram_conversion(path, output_path, audio_file, plot=True):
         # plt.show()
         plt.close('all')
 
+<<<<<<< HEAD
     return frequencies, times, spectrogram
+
+def main():
+    path = r'C:\Users\brenn\Documents\GitHub\Music-Genre-Recognition-using-a-Machine-Learning-Approach\Dataset\FMA dataset\Sorted/'
+
+    '''
+    for folder in os.listdir(path):
+        loc = path + folder + '/'
+        for file in os.listdir(loc):
+            if file.endswith('.mp3'):
+                src = loc+file
+                print(src)
+                dst = loc+file[:-4]+'.wav'
+                sound = AudioSegment.from_file(src)
+                sound.export(dst, format='wav')
+    '''
+
+    for folder in os.listdir(path):
+        loc = path + folder + '/'
+        for file in os.listdir(loc):
+            if file.endswith('.wav'):
+                print(loc)
+                print(file)
+                temp = Stereo_Mono_Conversion.Stereo_Mono_Conversion(loc, file)
+                frequencies, times, spectrogram = spectrogram_conversion(temp[:-15], temp[:-15], 'mono_042129.wav', True)
+
+
+if __name__ == '__main__':
+    main()
+=======
+    return frequencies, times, spectrogram
+>>>>>>> parent of 25ae312 (Spectrogram for new dataset (Not working with new data))
