@@ -8,7 +8,7 @@ def init_params():
 
 	:return:
 	"""
-	batch_size = 100
+	batch_size = 10
 	dataset_size = 700
 	return batch_size, dataset_size
 
@@ -39,7 +39,7 @@ def main():
 	print(len(validation_dataset))
 
 	model = MusicGenre.MusicGenre()
-	model = model.train(training_dataset, validation_dataset, epochs=20)
+	model.train(training_dataset, validation_dataset, epochs=50)
 	test_loss, test_acc = model.test(testing_dataset)
 
 	print(test_loss)

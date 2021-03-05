@@ -7,17 +7,26 @@ class MusicGenre:
 	def __init__(self):
 
 		self.model = models.Sequential()
-		self.model.add(layers.Conv2D(filters=32, kernel_size=(3, 3), strides=(2, 2), activation='relu',
+		self.model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), strides=(2, 2), activation='relu',
 								input_shape=(370, 497, 3)))
 		self.model.add(layers.MaxPooling2D((2, 2)))
-		self.model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), strides=(2, 2), activation='relu'))
-		self.model.add(layers.MaxPooling2D((2, 2)))
-		self.model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), strides=(2, 2), activation='relu'))
 
-		self.model.summary()
+		self.model.add(layers.Conv2D(filters=128, kernel_size=(3, 3), strides=(2, 2), activation='relu'))
+		self.model.add(layers.MaxPooling2D((2, 2)))
+
+		self.model.add(layers.Conv2D(filters=256, kernel_size=(3, 3), strides=(2, 2), activation='relu'))
+		self.model.add(layers.MaxPooling2D((2, 2)))
+
+		self.model.add(layers.Conv2D(filters=512, kernel_size=(3, 3), strides=(2, 2), activation='relu'))
+		self.model.add(layers.MaxPooling2D((2, 2)))
 
 		self.model.add(layers.Flatten())
-		self.model.add(layers.Dense(64, activation='relu'))
+		self.model.add(layers.Dense(128, activation='relu'))
+
+		self.model.add(layers.Activation('relu'))
+		self.model.add(layers.Dropout(0.5))
+
+		# Output layer
 		self.model.add(layers.Dense(10))
 
 		self.model.summary()
