@@ -3,22 +3,20 @@ import numpy as np
 from scipy import signal
 from scipy.io import wavfile
 from PIL import Image
-<<<<<<< HEAD
 import os
 from pydub import AudioSegment
 import pydub
 import Stereo_Mono_Conversion
 
-=======
->>>>>>> parent of 25ae312 (Spectrogram for new dataset (Not working with new data))
 
 '''
 Convert .wav file to spectrogram representation 
 
 Should change to input file type to make more general 
     - Should accept mp3, mp4, FLAC, ...
-'''
 
+Ensure that the .wav files coming in are already converted to mono 
+'''
 
 def spectrogram_conversion(path, output_path, audio_file, plot=True):
     # Get Spectrogram data from .wav file
@@ -49,11 +47,12 @@ def spectrogram_conversion(path, output_path, audio_file, plot=True):
         # plt.show()
         plt.close('all')
 
-<<<<<<< HEAD
     return frequencies, times, spectrogram
 
+
+# Used for the FMA dataset formatting
 def main():
-    path = r'C:\Users\brenn\Documents\GitHub\Music-Genre-Recognition-using-a-Machine-Learning-Approach\Dataset\FMA dataset\Sorted/'
+    path = r'C:\Users\brenn\Documents\School\Fourth Year\ELEC 490 - Electrical Engineering Project\Dataset(Current)\FMA dataset\Sorted Mono/'
 
     '''
     for folder in os.listdir(path):
@@ -73,12 +72,8 @@ def main():
             if file.endswith('.wav'):
                 print(loc)
                 print(file)
-                temp = Stereo_Mono_Conversion.Stereo_Mono_Conversion(loc, file)
-                frequencies, times, spectrogram = spectrogram_conversion(temp[:-15], temp[:-15], 'mono_042129.wav', True)
+                frequencies, times, spectrogram = spectrogram_conversion(loc, loc, file, True)
 
 
 if __name__ == '__main__':
     main()
-=======
-    return frequencies, times, spectrogram
->>>>>>> parent of 25ae312 (Spectrogram for new dataset (Not working with new data))
