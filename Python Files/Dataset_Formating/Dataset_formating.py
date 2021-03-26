@@ -1,6 +1,5 @@
 import os
-from Dataset_Formating import Spectogram_Conversion as sc
-from Dataset_Formating import Stereo_Mono_Conversion as sm
+from Refactor import Stereo_Mono_Conversion as sm, Spectogram_Conversion as sc
 
 '''
 Main file to combine stereo_mono conversion and spectrogram conversion
