@@ -1,14 +1,15 @@
 import LoadData
 import MusicGenre
 
-
+#TODO: Try large batch size to see how that performs
+#TODO: Too many neurons with small datset size. Try smaller size
 def init_params():
 	"""
 	Init parameters for the tensordatasets
 
 	:return:
 	"""
-	batch_size = 100
+	batch_size = 10
 	dataset_size = 700
 	return batch_size, dataset_size
 
@@ -30,16 +31,16 @@ def main():
 	print(len(training_dataset))
 
 	# Validation split = 0.3
-	split = int(len(training_dataset) * 0.3)
+	#split = int(len(training_dataset) * 0.3)
 	# Skip and take are used to split the training dataset into a training and validation set
-	validation_dataset = training_dataset.take(split)
-	training_dataset = training_dataset.skip(split)
+	#validation_dataset = training_dataset.take(split)
+	#training_dataset = training_dataset.skip(split)
 
 	print(len(training_dataset))
-	print(len(validation_dataset))
+	#print(len(validation_dataset))
 
 	model = MusicGenre.MusicGenre()
-	model = model.train(training_dataset, validation_dataset, epochs=20)
+	model.train(training_dataset, epochs=70)
 	test_loss, test_acc = model.test(testing_dataset)
 
 	print(test_loss)

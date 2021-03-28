@@ -1,5 +1,7 @@
 import tensorflow as tf
+import tensorflow.keras.preprocessing.image as image
 import os
+import numpy as np
 
 def img_to_tensor(file, label):
     """
@@ -53,6 +55,21 @@ def get_dataset_files(data_loc):
         genre_count = genre_count + 1
 
     return dataset_filenames, dataset_labels
+
+def data_to_tensors(file_name):
+    """
+
+    :param file_name: Location of file
+    :return:
+    """
+    #tensor, label = img_to_tensor(file_name, 1)
+
+    img = image.load_img(file_name, target_size=(370, 497, 3))
+    img = image.img_to_array(img)
+    img = np.expand_dims(img, axis=0)
+    print(img)
+
+    return img
 
 
 def dataset_to_tensors(data_loc, batch_size, data_num):

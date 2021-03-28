@@ -46,8 +46,8 @@ def spectrogram_conversion(path, output_path, audio_file, plot=True):
         # plt.xlabel('Time [sec]')
         # plt.show()
         plt.close('all')
-
-    return frequencies, times, spectrogram
+    return spectogram_dest + '.jpg'
+    #return frequencies, times, spectrogram
 
 
 # Used for the FMA dataset formatting
