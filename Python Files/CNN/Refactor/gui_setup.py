@@ -47,8 +47,15 @@ def main():
 
 		result.configure(text=outPut, font=("TkDefaultFont", 10, "bold"))
 
-		print(head)
-		print(tail)
+		path = spectrogram
+
+		img = ImageTk.PhotoImage(Image.open(path).resize((250, 185)))
+
+		panel.configure(image=img)
+		panel.image=img
+
+		window.geometry('650x500')
+
 
 	window = tk.Tk()
 	window.title("Genre Detector")
@@ -79,6 +86,9 @@ def main():
 
 	result = tk.Label(window, text="")
 	result.grid(column=1, row=5, columnspan=2, pady=20)
+
+	panel = tk.Label(window, image='')
+	panel.grid(column=1, row=6, columnspan=2)
 
 	window.mainloop()
 
