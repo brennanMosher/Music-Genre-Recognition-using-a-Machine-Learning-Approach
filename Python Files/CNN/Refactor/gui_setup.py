@@ -11,7 +11,10 @@ from PIL import ImageTk, Image
 
 def main():
 	def predict():
-		result.configure(text="Analyzing...")
+
+		header.configure(text="", font=("TkDefaultFont", 9))
+		result.configure(text="Analyzing...", font=("TkDefaultFont", 9))
+		panel.configure(image='')
 
 		inpt = txt.get()
 		head, tail = ntpath.split(inpt)
@@ -43,7 +46,9 @@ def main():
 		print(max_index)
 		print(genre_array[max_index])
 
-		outPut = "Music Genre Classification:\n" + genre_array[max_index]
+		outPut = genre_array[max_index]
+
+		header.configure(text="Music Genre Classification:", font=("TkDefaultFont", 10, "bold"))
 
 		result.configure(text=outPut, font=("TkDefaultFont", 10, "bold"))
 
@@ -84,11 +89,14 @@ def main():
 	btn = tk.Button(window, text="Detect", command=predict)
 	btn.grid(column=2, row=4, sticky="ne", padx=10)
 
+	header = tk.Label(window, text="")
+	header.grid(column=1, row=5, columnspan=2, pady=10)
+
 	result = tk.Label(window, text="")
-	result.grid(column=1, row=5, columnspan=2, pady=20)
+	result.grid(column=1, row=6, columnspan=2, pady=10)
 
 	panel = tk.Label(window, image='')
-	panel.grid(column=1, row=6, columnspan=2)
+	panel.grid(column=1, row=7, columnspan=2)
 
 	window.mainloop()
 
